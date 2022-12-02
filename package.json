@@ -1,0 +1,26 @@
+{
+  "name": "showroom",
+  "version": "0.0.1",
+  "description": "danmaid's show room view",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danmaid/showroom.git"
+  },
+  "author": "danmaid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danmaid/showroom/issues"
+  },
+  "homepage": "https://github.com/danmaid/showroom#readme",
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "electron": "^22.0.0",
+    "typescript": "^4.9.3"
+  }
+}

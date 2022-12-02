@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+  </head>
+  <body>
+    hello world.
+    <button onclick="getAllDisplays()">getAllDisplays</button>
+    <button onclick="getAllWindows()">getAllWindows</button>
+    <hr />
+    <label>x<input type="number" id="x" /></label>
+    <label>y<input type="number" id="y" /></label>
+    <label>width<input type="number" id="width" /></label>
+    <label>height<input type="number" id="height" /></label>
+    <button onclick="openWindow()">new Window</button>
+    <script>
+      async function getAllDisplays() {
+        const disps = await electronAPI.getAllDisplays()
+        console.log(disps)
+      }
+      async function getAllWindows() {
+        const wins = await electronAPI.getAllWindows()
+        console.log(wins)
+      }
+      async function openWindow() {
+        const x = document.getElementById('x')?.value
+        const y = document.getElementById('y')?.value
+        const width = document.getElementById('width')?.value
+        const height = document.getElementById('height')?.value
+        console.log({ x, y, width, height })
+        const rect = {}
+        if (x !== undefined) rect.x = parseInt(x)
+        if (y !== undefined) rect.y = parseInt(y)
+        if (width !== undefined) rect.width = parseInt(width)
+        if (height !== undefined) rect.height = parseInt(height)
+        console.log(rect)
+        const win = await electronAPI.openWindow(rect)
+        console.log(win)
+      }
+    </script>
+  </body>
+</html>
